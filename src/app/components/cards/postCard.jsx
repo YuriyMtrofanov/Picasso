@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Post = ({ id, title, body }) => {
     return (
         <div
-            className="card m-3 shadow p-2"
+            className="card m-1 shadow p-2"
             style={{
                 background: "lightgray"
             }}
@@ -13,7 +13,7 @@ const Post = ({ id, title, body }) => {
             <div className="card-body">
                 <h4 className="mb-1 ">{`${id}. ${title}`}</h4>
                 <p className="card-text">{body.slice(0, 300)}</p>
-                <h5 className="button">
+                <h5 role="button">
                     <Link to={`/${id}`}>
                         ...Read more
                     </Link>
@@ -26,7 +26,8 @@ const Post = ({ id, title, body }) => {
 Post.propTypes = {
     id: PropTypes.number,
     title: PropTypes.string,
-    body: PropTypes.string
+    body: PropTypes.string,
+    style: PropTypes.object
 };
 
 export default Post;
